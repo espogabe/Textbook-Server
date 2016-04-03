@@ -2,6 +2,7 @@
 Server for location-based university textbook marketplace app (https://github.com/Aaron-Zhao/Textbookbns)
 
 # Dependencies & setup
+Requires Python 2
 ```
 sudo apt-get install build-essential python-dev python-pip python-virtualenv libffi-dev libssl-dev
 (optional) virtualenv env
