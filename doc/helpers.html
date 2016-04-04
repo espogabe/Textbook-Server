@@ -1,0 +1,65 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module helpers</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>helpers</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/gabriel/textbook_server/helpers.py">/home/gabriel/textbook_server/helpers.py</a></font></td></tr></table>
+    <p><tt>Helper&nbsp;functions&nbsp;for&nbsp;the&nbsp;server.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ConfigParser.html">ConfigParser</a><br>
+</td><td width="25%" valign=top><a href="decimal.html">decimal</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-acos"><strong>acos</strong></a>(...)</dt><dd><tt><a href="#-acos">acos</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;arc&nbsp;cosine&nbsp;(measured&nbsp;in&nbsp;radians)&nbsp;of&nbsp;x.</tt></dd></dl>
+ <dl><dt><a name="-cos"><strong>cos</strong></a>(...)</dt><dd><tt><a href="#-cos">cos</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;cosine&nbsp;of&nbsp;x&nbsp;(measured&nbsp;in&nbsp;radians).</tt></dd></dl>
+ <dl><dt><a name="-create_config"><strong>create_config</strong></a>()</dt><dd><tt>Creates&nbsp;the&nbsp;config&nbsp;for&nbsp;the&nbsp;server.<br>
+Example&nbsp;config:<br>
+&nbsp;<br>
+[mysql]<br>
+user=textbooks<br>
+pass=textbooks<br>
+host=localhost<br>
+db=textbooks<br>
+&nbsp;<br>
+[oAuth]<br>
+server_client_id=validtoken<br>
+android_client_id=validtoken<br>
+&nbsp;<br>
+[http]<br>
+host=localhost<br>
+port=8080</tt></dd></dl>
+ <dl><dt><a name="-dec_default"><strong>dec_default</strong></a>(obj)</dt><dd><tt>Default&nbsp;function&nbsp;for&nbsp;json.dumps()&nbsp;to&nbsp;allow&nbsp;serialization&nbsp;of&nbsp;Decimal()&nbsp;from&nbsp;pymysql.</tt></dd></dl>
+ <dl><dt><a name="-point_near"><strong>point_near</strong></a>(lat, lng, rlat, rlng, r)</dt><dd><tt>Returns&nbsp;true&nbsp;if&nbsp;the&nbsp;point&nbsp;for&nbsp;lat,&nbsp;lng&nbsp;is&nbsp;within&nbsp;r&nbsp;miles&nbsp;of&nbsp;rlat,&nbsp;rlng</tt></dd></dl>
+ <dl><dt><a name="-sin"><strong>sin</strong></a>(...)</dt><dd><tt><a href="#-sin">sin</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;sine&nbsp;of&nbsp;x&nbsp;(measured&nbsp;in&nbsp;radians).</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>EARTH_R</strong> = 3959</td></tr></table>
+</body></html>

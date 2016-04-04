@@ -1,0 +1,189 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module server</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>server</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/gabriel/textbook_server/server.py">/home/gabriel/textbook_server/server.py</a></font></td></tr></table>
+    <p><tt>REST&nbsp;API&nbsp;for&nbsp;Android&nbsp;Textbook&nbsp;Marketplace&nbsp;App.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ConfigParser.html">ConfigParser</a><br>
+<a href="oauth2client.client.html">oauth2client.client</a><br>
+</td><td width="25%" valign=top><a href="oauth2client.crypt.html">oauth2client.crypt</a><br>
+<a href="decimal.html">decimal</a><br>
+</td><td width="25%" valign=top><a href="json.html">json</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="traceback.html">traceback</a><br>
+<a href="webapp2.html">webapp2</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="webapp2.html#RequestHandler">webapp2.RequestHandler</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="server.html#AppAPI">AppAPI</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="AppAPI">class <strong>AppAPI</strong></a>(<a href="webapp2.html#RequestHandler">webapp2.RequestHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Request&nbsp;handler&nbsp;API&nbsp;class.&nbsp;Takes&nbsp;care&nbsp;of&nbsp;GET&nbsp;and&nbsp;POST&nbsp;requests.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="server.html#AppAPI">AppAPI</a></dd>
+<dd><a href="webapp2.html#RequestHandler">webapp2.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="AppAPI-get"><strong>get</strong></a>(self)</dt><dd><tt>Handle&nbsp;GET&nbsp;requests&nbsp;by&nbsp;passing&nbsp;to&nbsp;SQL&nbsp;wrapper.&nbsp;Respond&nbsp;with&nbsp;JSON.</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-verify_oauth_token"><strong>verify_oauth_token</strong></a>(self, token)</dt><dd><tt>Verify&nbsp;the&nbsp;oAuth&nbsp;token&nbsp;with&nbsp;Google</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-verify_permissions"><strong>verify_permissions</strong></a>(self, req)</dt><dd><tt>Essentially&nbsp;allow&nbsp;everyone&nbsp;to&nbsp;read,&nbsp;but&nbsp;only&nbsp;the&nbsp;creator&nbsp;of&nbsp;a&nbsp;record&nbsp;can&nbsp;write/delete</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="webapp2.html#RequestHandler">webapp2.RequestHandler</a>:<br>
+<dl><dt><a name="AppAPI-__init__"><strong>__init__</strong></a>(self, request<font color="#909090">=None</font>, response<font color="#909090">=None</font>)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;WSGI&nbsp;application,<br>
+Request&nbsp;and&nbsp;Response.<br>
+&nbsp;<br>
+When&nbsp;instantiated&nbsp;by&nbsp;``webapp.WSGIApplication``,&nbsp;request&nbsp;and&nbsp;response<br>
+are&nbsp;not&nbsp;set&nbsp;on&nbsp;instantiation.&nbsp;Instead,&nbsp;<a href="#AppAPI-initialize">initialize</a>()&nbsp;is&nbsp;called&nbsp;right<br>
+after&nbsp;the&nbsp;handler&nbsp;is&nbsp;created&nbsp;to&nbsp;set&nbsp;them.<br>
+&nbsp;<br>
+Also&nbsp;in&nbsp;webapp&nbsp;dispatching&nbsp;is&nbsp;done&nbsp;by&nbsp;the&nbsp;WSGI&nbsp;app,&nbsp;while&nbsp;webapp2<br>
+does&nbsp;it&nbsp;here&nbsp;to&nbsp;allow&nbsp;more&nbsp;flexibility&nbsp;in&nbsp;extended&nbsp;classes:&nbsp;handlers<br>
+can&nbsp;wrap&nbsp;:meth:`dispatch`&nbsp;to&nbsp;check&nbsp;for&nbsp;conditions&nbsp;before&nbsp;executing&nbsp;the<br>
+requested&nbsp;method&nbsp;and/or&nbsp;post-process&nbsp;the&nbsp;response.<br>
+&nbsp;<br>
+..&nbsp;note::<br>
+&nbsp;&nbsp;&nbsp;Parameters&nbsp;are&nbsp;optional&nbsp;only&nbsp;to&nbsp;support&nbsp;webapp's&nbsp;constructor&nbsp;which<br>
+&nbsp;&nbsp;&nbsp;doesn't&nbsp;take&nbsp;any&nbsp;arguments.&nbsp;Consider&nbsp;them&nbsp;as&nbsp;required.<br>
+&nbsp;<br>
+:param&nbsp;request:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;:class:`Request`&nbsp;instance.<br>
+:param&nbsp;response:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;:class:`Response`&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-abort"><strong>abort</strong></a>(self, code, *args, **kwargs)</dt><dd><tt>Raises&nbsp;an&nbsp;:class:`HTTPException`.<br>
+&nbsp;<br>
+This&nbsp;stops&nbsp;code&nbsp;execution,&nbsp;leaving&nbsp;the&nbsp;HTTP&nbsp;exception&nbsp;to&nbsp;be&nbsp;handled<br>
+by&nbsp;an&nbsp;exception&nbsp;handler.<br>
+&nbsp;<br>
+:param&nbsp;code:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HTTP&nbsp;status&nbsp;code&nbsp;(e.g.,&nbsp;404).<br>
+:param&nbsp;args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Positional&nbsp;arguments&nbsp;to&nbsp;be&nbsp;passed&nbsp;to&nbsp;the&nbsp;exception&nbsp;class.<br>
+:param&nbsp;kwargs:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Keyword&nbsp;arguments&nbsp;to&nbsp;be&nbsp;passed&nbsp;to&nbsp;the&nbsp;exception&nbsp;class.</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-dispatch"><strong>dispatch</strong></a>(self)</dt><dd><tt>Dispatches&nbsp;the&nbsp;request.<br>
+&nbsp;<br>
+This&nbsp;will&nbsp;first&nbsp;check&nbsp;if&nbsp;there's&nbsp;a&nbsp;handler_method&nbsp;defined&nbsp;in&nbsp;the<br>
+matched&nbsp;route,&nbsp;and&nbsp;if&nbsp;not&nbsp;it'll&nbsp;use&nbsp;the&nbsp;method&nbsp;correspondent&nbsp;to&nbsp;the<br>
+request&nbsp;method&nbsp;(``<a href="#AppAPI-get">get</a>()``,&nbsp;``post()``&nbsp;etc).</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;status&nbsp;code.<br>
+&nbsp;<br>
+This&nbsp;doesn't&nbsp;stop&nbsp;code&nbsp;execution;&nbsp;for&nbsp;this,&nbsp;use&nbsp;:meth:`abort`.<br>
+&nbsp;<br>
+:param&nbsp;code:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501).</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;re-raise&nbsp;the&nbsp;exception&nbsp;to&nbsp;be&nbsp;handled&nbsp;by<br>
+:meth:`WSGIApplication.handle_exception`.<br>
+&nbsp;<br>
+:param&nbsp;exception:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown.<br>
+:param&nbsp;debug_mode:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode.</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;WSGI&nbsp;application,<br>
+Request&nbsp;and&nbsp;Response.<br>
+&nbsp;<br>
+:param&nbsp;request:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;:class:`Request`&nbsp;instance.<br>
+:param&nbsp;response:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;:class:`Response`&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>, abort<font color="#909090">=False</font>, code<font color="#909090">=None</font>, body<font color="#909090">=None</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URI.<br>
+&nbsp;<br>
+The&nbsp;arguments&nbsp;are&nbsp;described&nbsp;in&nbsp;:func:`redirect`.</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-redirect_to"><strong>redirect_to</strong></a>(self, _name, _permanent<font color="#909090">=False</font>, _abort<font color="#909090">=False</font>, _code<font color="#909090">=None</font>, _body<font color="#909090">=None</font>, *args, **kwargs)</dt><dd><tt>Convenience&nbsp;method&nbsp;mixing&nbsp;:meth:`redirect`&nbsp;and&nbsp;:meth:`uri_for`.<br>
+&nbsp;<br>
+The&nbsp;arguments&nbsp;are&nbsp;described&nbsp;in&nbsp;:func:`redirect`&nbsp;and&nbsp;:func:`uri_for`.</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-uri_for"><strong>uri_for</strong></a>(self, _name, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;URI&nbsp;for&nbsp;a&nbsp;named&nbsp;:class:`Route`.<br>
+&nbsp;<br>
+..&nbsp;seealso::&nbsp;:meth:`Router.build`.</tt></dd></dl>
+
+<dl><dt><a name="AppAPI-url_for"><strong>url_for</strong></a> = uri_for(self, _name, *args, **kwargs)</dt><dd><tt>Returns&nbsp;a&nbsp;URI&nbsp;for&nbsp;a&nbsp;named&nbsp;:class:`Route`.<br>
+&nbsp;<br>
+..&nbsp;seealso::&nbsp;:meth:`Router.build`.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="webapp2.html#RequestHandler">webapp2.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="webapp2.html#RequestHandler">webapp2.RequestHandler</a>:<br>
+<dl><dt><strong>app</strong> = None</dl>
+
+<dl><dt><strong>request</strong> = None</dl>
+
+<dl><dt><strong>response</strong> = None</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>SQLDB</strong> = 'textbooks'<br>
+<strong>SQLHost</strong> = 'localhost'<br>
+<strong>SQLpass</strong> = 'textbooks470'<br>
+<strong>SQLuser</strong> = 'textbooks'<br>
+<strong>ServerHost</strong> = 'uaa-cse2.duckdns.org'<br>
+<strong>ServerPort</strong> = '8080'<br>
+<strong>app</strong> = &lt;webapp2.WSGIApplication object&gt;<br>
+<strong>config</strong> = &lt;ConfigParser.ConfigParser instance&gt;<br>
+<strong>oAuthAndroidClientID</strong> = '651332007655-h4377dhk4nc5tfbfmga4p1itdmfr6vn6.apps.googleusercontent.com'<br>
+<strong>oAuthServerClientID</strong> = '651332007655-22ihm02tgmak66je9h3636q3ql04eccg.apps.googleusercontent.com'</td></tr></table>
+</body></html>

@@ -1,1 +1,33 @@
+<html>
+<h1>Gabriel Esposito & Aaron Zhao's Android Textbook App API Documentation</h1>
 
+This page contains the documentation for our application's API, which is as of now only implemented by our app.<br>
+The url format is: https://uaa-cse2.duckdns.org:8080/api?token=XXX&action=XXX&table=XXX...
+
+<h2>Required:</h2>
+
+<b>token</b><br>
+Preface every request with this. It MUST be a valid token coming from our app verified with oAuth.<br>
+We will not accept requests from any other source.<br><br>
+
+<b>action</b><br>
+One of: select, insert, delete, update<br>
+Which correspond to their MySQL counterparts.<br><br>
+
+<b>table</b><br>
+The table name to modify. Usually Sale.<br><br>
+
+<h2>Optional:</h2>
+Afterward, you can add additional fields to the url. They will be implemented in the appropriate way for the action type.<br>
+Example: ...&action=select&table=Sale&SellerID=Gabriel  will turn into "SELECT * FROM `Sale` WHERE SellerID = Gabriel;"
+
+<h2>Notes:</h2>
+
+
+The server will send back the response in application/json format.<br>
+There will always be an <i>error</i> field.<br>
+If the token field is invalid, the server will respond with 401 Unauthorized.<br>
+(Certain implementations of HTTP calls on android will return filenotfound IOexception if they get a 401)
+
+
+</html>

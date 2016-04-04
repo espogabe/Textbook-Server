@@ -1,0 +1,62 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module sqlwrapper</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sqlwrapper</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/gabriel/textbook_server/sqlwrapper.py">/home/gabriel/textbook_server/sqlwrapper.py</a></font></td></tr></table>
+    <p><tt>Flexible&nbsp;Python&nbsp;wrapper&nbsp;for&nbsp;a&nbsp;local&nbsp;MySQL&nbsp;server&nbsp;to&nbsp;be&nbsp;served&nbsp;over&nbsp;an&nbsp;API.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pymysql.html">pymysql</a><br>
+</td><td width="25%" valign=top><a href="warnings.html">warnings</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="sqlwrapper.html#RESTWrapper">RESTWrapper</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RESTWrapper">class <strong>RESTWrapper</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Implement&nbsp;a&nbsp;SQL&nbsp;wrapper&nbsp;with&nbsp;REST&nbsp;philosophy.&nbsp;One&nbsp;query/connection.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RESTWrapper-__init__"><strong>__init__</strong></a>(self, host, username, password, database)</dt></dl>
+
+<dl><dt><a name="RESTWrapper-query"><strong>query</strong></a>(self, action, table, **kwargs)</dt><dd><tt>Run&nbsp;a&nbsp;mysql&nbsp;query&nbsp;on&nbsp;a&nbsp;table.<br>
+Sanitizes&nbsp;inputs&nbsp;with&nbsp;<a href="#-scrub">scrub</a>().<br>
+**kwargs&nbsp;is&nbsp;field,&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="RESTWrapper-query_passthru"><strong>query_passthru</strong></a>(self, query)</dt><dd><tt>Run&nbsp;the&nbsp;query&nbsp;directly&nbsp;using&nbsp;pymysql.&nbsp;Does&nbsp;NOT&nbsp;sanitize.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-scrub"><strong>scrub</strong></a>(string, exclude<font color="#909090">=[]</font>)</dt><dd><tt>Avoid&nbsp;SQL&nbsp;injection&nbsp;attacks.<br>
+Only&nbsp;return&nbsp;alphanumeric&nbsp;characters&nbsp;or<br>
+the&nbsp;contents&nbsp;of&nbsp;exclude&nbsp;that&nbsp;are&nbsp;in&nbsp;the&nbsp;original&nbsp;string.</tt></dd></dl>
+</td></tr></table>
+</body></html>
