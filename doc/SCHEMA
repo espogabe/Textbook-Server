@@ -1,0 +1,43 @@
+mysql> describe Sale;
++----------------+---------------+------+-----+---------+----------------+
+| Field          | Type          | Null | Key | Default | Extra          |
++----------------+---------------+------+-----+---------+----------------+
+| ID             | int(11)       | NO   | PRI | NULL    | auto_increment |
+| SellerID       | varchar(255)  | NO   |     | NULL    |                |
+| Title          | varchar(255)  | YES  |     | NULL    |                |
+| ISBN           | varchar(13)   | YES  |     | NULL    |                |
+| Authors        | varchar(255)  | YES  |     | NULL    |                |
+| Edition        | varchar(255)  | YES  |     | NULL    |                |
+| Price          | varchar(255)  | YES  |     | NULL    |                |
+| Description    | varchar(255)  | YES  |     | NULL    |                |
+| University     | varchar(255)  | YES  |     | NULL    |                |
+| CourseCode     | varchar(255)  | YES  |     | NULL    |                |
+| ThumbnailLink  | varchar(255)  | YES  |     | NULL    |                |
+| GoogleInfoLink | varchar(255)  | YES  |     | NULL    |                |
+| Lat            | decimal(10,8) | YES  |     | NULL    |                |
+| Lng            | decimal(11,8) | YES  |     | NULL    |                |
++----------------+---------------+------+-----+---------+----------------+
+14 rows in set (0.00 sec)
+
+mysql> describe WatchList;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| ID     | int(11)      | NO   | PRI | NULL    | auto_increment |
+| SaleID | int(11)      | NO   | MUL | NULL    |                |
+| UserID | varchar(255) | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> describe Message;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| ID            | int(11)      | NO   | PRI | NULL    | auto_increment |
+| PreviousMsgID | int(11)      | YES  | MUL | NULL    |                |
+| NextMsgID     | int(11)      | YES  | MUL | NULL    |                |
+| Receiver      | varchar(255) | NO   |     | NULL    |                |
+| Sender        | varchar(255) | NO   |     | NULL    |                |
+| Message       | varchar(255) | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
