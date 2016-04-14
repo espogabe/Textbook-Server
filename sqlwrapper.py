@@ -89,7 +89,6 @@ def scrub(string, exclude=[]):
     """
     
     # Common punctuation.
-    for char in [' ', '(', ')', '.', '?', '!', ':', '-', '@']:
-        exclude.append(char)
+    exclude += [' ', '(', ')', '.', '?', '!', ':', '-', '@']
     
     return ''.join([char for char in string if char.isalnum() or char in exclude])
