@@ -19,7 +19,7 @@ def point_near(lat, lng, rlat, rlng, r):
     """Returns true if the point for lat, lng is within r miles of rlat, rlng"""
 
     # Shortest distance between two given points
-    return acos(sin(lat) * sin(rlat) + cos(lat) * cos(rlat) * cos(lng - rlng)) * EARTH_R < r
+    return acos(sin(lat) * sin(rlat) + cos(lat) * cos(rlat) * cos(lng - float(rlng))) * EARTH_R < r
 
 def dec_default(obj):
     """Default function for json.dumps() to allow serialization of Decimal() from pymysql."""

@@ -110,8 +110,8 @@ class AppAPI(webapp2.RequestHandler):
                         self.response.write(json.dumps({"error": "", "message": "Successful"}))
                 elif action == 'getsalesnearby':
 
-                    lat = double(scrub(self.request.GET['lat']))
-                    lng = double(scrub(self.request.GET['long']))
+                    lat = float(scrub(self.request.GET['lat']))
+                    lng = float(scrub(self.request.GET['long']))
                     radius = int(scrub(self.request.GET['r']))
 
                     wr = RESTWrapper(SQLHost, SQLuser, SQLpass, SQLDB)
@@ -122,7 +122,7 @@ class AppAPI(webapp2.RequestHandler):
 
                     # Find sales within r miles of user
                     for row in res:
-                        if point_near(lat, lng, row['Lat'], row['Lng'], r):
+                        if point_near(lat, lng, row['Lat'], row['Lng'], radius):
                             nearest.append(row)
 
                     self.response.write(json.dumps({"error": "", "message": nearest}, default=dec_default))
