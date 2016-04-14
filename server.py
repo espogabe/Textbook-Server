@@ -71,6 +71,12 @@ class AppAPI(webapp2.RequestHandler):
             if 'SellerID' in req.keys():
                 if req['SellerID'] == email:
                     return True
+            elif 'Receiver' in req.keys():
+                if req['Receiver'] == email:
+                    return True
+            elif 'UserID' in req.keys():
+                if req['UserID'] == email:
+                    return True
             raise Exception('SellerID does not match the account used to insert this row')
             return False
         else:
