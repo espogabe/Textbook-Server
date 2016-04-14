@@ -57,20 +57,21 @@ class AppAPI(webapp2.RequestHandler):
             if token['iss'] not in ['accounts.google.com', 'https://accounts.google.com']:
                 raise crypt.AppIdentityError("Wrong Issuer.")
 
-            return True
+            return token['email']
         except Exception, e:
             print e
             print traceback.format_exc()
 
-        return False
+        return None
 
-    def verify_permissions(self, req):
+    def verify_permissions(self, req, email):
         """Essentially allow everyone to read, but only the creator of a record can write/delete"""
 
         if req['action'] in ['delete', 'update']:
             if 'SellerID' in req.keys():
-                if req['SellerID'] == get_sellerid(req['token']):
+                if req['SellerID'] == email:
                     return True
+            raise Exception('SellerID does not match the account used to insert this row')
             return False
         else:
             return True
@@ -81,7 +82,8 @@ class AppAPI(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'application/json'
         print self.request.GET
         try:
-            if self.verify_oauth_token(self.request.GET['token']) and self.verify_permissions(self.request.GET):
+            email = self.verify_oauth_token(self.request.GET['token'])
+            if email and self.verify_permissions(self.request.GET, email):
                 action = self.request.GET['action']
                 if action in ['select', 'delete', 'insert', 'update']:
 
